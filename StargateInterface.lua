@@ -3,7 +3,6 @@ event = require("event")
 os = require("os")
 sg = c.stargate
 
-
 print("Testing 1")
 --status
 function getSgType()
@@ -20,12 +19,11 @@ end
 
 function getStoredEnergy()
     return sg.getEnergyStored()
-end 
+end
 
 --dialing
 function engageSymbol(symbolName)
-    while (getStatus() ~= "idle") 
-    do
+    while (getStatus() ~= "idle") do
         print("Waiting for gate to idle")
     end
     if (getStatus() == "idle") then
@@ -45,8 +43,8 @@ end
 function closeIris()
     local irisType = getIrisType()
     if (irisType == "NULL") then
-       --no iris
-       print("No Iris Installed")
+        --no iris
+        print("No Iris Installed")
     else
         --has iris
         local irisState = getIrisState()
@@ -55,14 +53,14 @@ function closeIris()
         else
             print("Iris Not Open")
         end
-    end 
+    end
 end
 
 function openIris()
     local irisType = getIrisType()
     if (irisType == "NULL") then
-       --no iris
-       print("No Iris Installed")
+        --no iris
+        print("No Iris Installed")
     else
         --has iris
         local irisState = getIrisState()
@@ -72,9 +70,9 @@ function openIris()
             --not CLOSED
             print("Iris Not Closed")
         end
-    end 
+    end
 end
-    
+
 function toggleIris()
     sg.toggleIris()
 end
