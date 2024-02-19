@@ -83,3 +83,5 @@ end
 function getIrisDurability()
     return sg.getIrisDurability()
 end
+
+print("Testing")
