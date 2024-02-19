@@ -1,9 +1,12 @@
+
+print("Testing")
 c = require("component")
 event = require("event")
 os = require("os")
 sg = c.stargate
 
 print("Testing 1")
+print(getSgType())
 --status
 function getSgType()
     return sg.getGateType()
