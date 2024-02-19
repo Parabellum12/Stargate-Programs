@@ -4,6 +4,7 @@ os = require("os")
 sg = c.stargate
 
 
+print("Testing 1")
 --status
 function getSgType()
     return sg.getGateType()
@@ -23,7 +24,13 @@ end
 
 --dialing
 function engageSymbol(symbolName)
-    return sg.engageSymbol(symbolName)
+    while (getStatus() ~= "idle") 
+    do
+        print("Waiting for gate to idle")
+    end
+    if (getStatus() == "idle") then
+        return sg.engageSymbol(symbolName)
+    end
 end
 
 function engageGate()
@@ -84,4 +91,4 @@ function getIrisDurability()
     return sg.getIrisDurability()
 end
 
-print("Testing")
+print("Testing 2")

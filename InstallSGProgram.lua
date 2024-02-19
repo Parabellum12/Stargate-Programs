@@ -1,1 +1,1 @@
-wget("https://github.com/Parabellum12/Stargate-Programs/blob/main/StargateInterface.lua", "home/SGInterface.lua")
+wget -f 'https://github.com/Parabellum12/Stargate-Programs/blob/main/StargateInterface.lua' 'home/SGInterface.lua'
