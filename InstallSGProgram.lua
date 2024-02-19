@@ -1,0 +1,1 @@
+pastebin get -f 84bZeuy7 home/dial.lua
