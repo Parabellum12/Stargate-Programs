@@ -1,4 +1,4 @@
-sgi = require("StargateInterface")
+sgi = require("StargateInterface.lua")
 
 if (sgi == nil) then
     print("StargateInterface Reference Invalid")
