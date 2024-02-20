@@ -5,26 +5,28 @@ local event = require("event")
 local os = require("os")
 local sg = c.stargate
 
+local sgInterface = {}
+
 --print("Testing 1")
 --status
-function getSgType()
+function sgInterface.getSgType()
     return sg.getGateType()
 end
 
-function getStatus()
+function sgInterface.getStatus()
     return sg.getGateStatus()
 end
 
-function getEnergyNeeded(symbols)
+function sgInterface.getEnergyNeeded(symbols)
     return sg.getEnergyRequiredToDial(symbols)
 end
 
-function getStoredEnergy()
+function sgInterface.getStoredEnergy()
     return sg.getEnergyStored()
 end
 
 --dialing
-function engageSymbol(symbolName)
+function sgInterface.engageSymbol(symbolName)
     while (getStatus() ~= "idle") do
         print("Waiting for gate to idle")
     end
@@ -33,16 +35,16 @@ function engageSymbol(symbolName)
     end
 end
 
-function engageGate()
+function sgInterface.engageGate()
     return sg.engageGate()
 end
 
-function disengageGate()
+function sgInterface.disengageGate()
     return sg.disengageGate()
 end
 
 --iris
-function closeIris()
+function sgInterface.closeIris()
     local irisType = getIrisType()
     if (irisType == "NULL") then
         --no iris
@@ -58,7 +60,7 @@ function closeIris()
     end
 end
 
-function openIris()
+function sgInterface.openIris()
     local irisType = getIrisType()
     if (irisType == "NULL") then
         --no iris
@@ -75,19 +77,19 @@ function openIris()
     end
 end
 
-function toggleIris()
+function sgInterface.toggleIris()
     sg.toggleIris()
 end
 
-function getIrisType()
+function sgInterface.getIrisType()
     return sg.getIrisType()
 end
 
-function getIrisState()
+function sgInterface.getIrisState()
     return sg.getIrisState()
 end
 
-function getIrisDurability()
+function sgInterface.getIrisDurability()
     return sg.getIrisDurability()
 end
 
