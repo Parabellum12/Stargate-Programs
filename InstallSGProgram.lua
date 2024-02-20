@@ -1,2 +1,2 @@
-shell.execute('wget -f \'https://github.com/Parabellum12/Stargate-Programs/blob/main/StargateInterface.lua\' home/SGInterface.lua')
-print("Downloading File")
+shell.execute("wget -f 'https://raw.githubusercontent.com/Parabellum12/Stargate-Programs/main/StargateInterface.lua' /home/SGInterface.lua")
+shell.execute("pastebin get -f JKVyi8H0 test.lua")
