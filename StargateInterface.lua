@@ -35,6 +35,14 @@ function sgInterface.engageSymbol(symbolName)
     end
 end
 
+function sgInterface.isReadyForSymbol()
+    if (sgInterface.getStatus() == "idle") then
+        return true
+    else
+        return false
+    end
+end
+
 function sgInterface.engageGate()
     return sg.engageGate()
 end

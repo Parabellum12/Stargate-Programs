@@ -7,3 +7,14 @@ end
 
 
 print("Stored Energy:"..sgi.getStoredEnergy());
+
+local temp = {"Libra", "Canis Minor", "Sextans", "Norma", "Leo Minor", "Pegasus", "Monoceros", "Orion", "Point of Origin"}
+
+local index = 1
+
+for i = 1, 9 do
+    while (not sgi.isReadyForSymbol()) do
+    
+    end
+    sgi.engageSymbol(temp[i])
+end
