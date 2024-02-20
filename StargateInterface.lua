@@ -25,7 +25,6 @@ end
 --dialing
 function sgInterface.engageSymbol(symbolName)
     while (not sgInterface.isReadyForSymbol()) do
-        --print("Waiting for gate to idle")
     end
     return sg.engageSymbol(symbolName)
 end
