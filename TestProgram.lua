@@ -8,13 +8,13 @@ end
 
 print("Stored Energy:"..sgi.getStoredEnergy());
 
-local temp = {"Libra", "Canis Minor", "Sextans", "Norma", "Leo Minor", "Pegasus", "Monoceros", "Orion", "Point of Origin"}
+local address = {"Libra", "Canis Minor", "Sextans", "Norma", "Leo Minor", "Pegasus", "Monoceros", "Orion", "Point of Origin"}
 
-local index = 1
 
 for i = 1, 9 do
-    print("Engaging "..temp[i])
-    sgi.engageSymbol(temp[i])
+    temp = address[i]
+    print("Engaging "..temp)
+    sgi.engageSymbol(temp)
 end
 
 sgi.engageGate()
