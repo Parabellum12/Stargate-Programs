@@ -1,4 +1,4 @@
-sgi = require("StargateInterface")
+local sgi = require("StargateInterface")
 
 if (sgi == nil) then
     print("StargateInterface Reference Invalid")

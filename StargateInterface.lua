@@ -1,9 +1,9 @@
 
 --print("Testing")
-c = require("component")
-event = require("event")
-os = require("os")
-sg = c.stargate
+local c = require("component")
+local event = require("event")
+local os = require("os")
+local sg = c.stargate
 
 --print("Testing 1")
 --status
