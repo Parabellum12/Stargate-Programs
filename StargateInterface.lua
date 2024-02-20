@@ -95,3 +95,5 @@ end
 
 --print("Testing 2")
 --print(getSgType())
+
+return sgInterface
