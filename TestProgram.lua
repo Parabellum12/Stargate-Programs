@@ -1,8 +1,9 @@
 local sgi = require("StargateInterface")
 
-if (sgi == nil) then
-    print("StargateInterface Reference Invalid")
-    return
+while (sgi == nil)
+do
+    print("sgi FAIL RETRY")
+    sgi = require("StargateInterface")
 end
 
 
