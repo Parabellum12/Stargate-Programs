@@ -1,5 +1,5 @@
 local sgi = require("StargateInterface")
-
+local os = require("os")
 if (sgi == nil) then
     print("StargateInterface Reference Invalid")
     return
@@ -12,10 +12,11 @@ local address = {"Libra", "Canis Minor", "Sextans", "Norma", "Leo Minor", "Pegas
 
 
 for i = 1, 9 do
-    temp = address[i]
+    local temp = address[i]
     print("Engaging "..temp)
     sgi.engageSymbol(temp)
 end
 
 sgi.engageGate()
+os.sleep(0.1)
 sgi.disengageGate()
