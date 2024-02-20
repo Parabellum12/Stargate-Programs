@@ -1,4 +1,5 @@
 local sgi = require("StargateInterface")
+local dialtest = require("Dial")
 local os = require("os")
 if (sgi == nil) then
     print("StargateInterface Reference Invalid")
@@ -22,6 +23,10 @@ end
 
 sgi.engageGate()
 
-os.sleep(0.1)
+os.sleep(5)
 
 sgi.disengageGate()
+
+os.sleep(2)
+
+dialtest.Dial({"Libra", "Microscopium", "Auriga", "Virgo", "Aries", "Lynx", "Taurus", "Point of Origin"})

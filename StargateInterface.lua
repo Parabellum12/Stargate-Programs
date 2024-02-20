@@ -24,12 +24,6 @@ end
 
 --dialing
 function sgInterface.engageSymbol(symbolName)
-    if (sgInterface.getStatus() == "open") then
-        print("Gate already open")
-        return "gate_open"
-    end
-    while (not sgInterface.isReadyForSymbol()) do
-    end
     return sg.engageSymbol(symbolName)
 end
 
@@ -54,14 +48,15 @@ function sgInterface.closeIris()
     local irisType = sgInterface.getIrisType()
     if (irisType == "NULL") then
         --no iris
-        print("No Iris Installed")
+        return "No_Iris"
     else
         --has iris
         local irisState = sgInterface.getIrisState()
         if (irisState == "OPENED") then
             sgInterface.toggleIris()
+            return "Iris_opening"
         else
-            print("Iris Not Open")
+            return "Iris_not_open"
         end
     end
 end
@@ -70,15 +65,16 @@ function sgInterface.openIris()
     local irisType = sgInterface.getIrisType()
     if (irisType == "NULL") then
         --no iris
-        print("No Iris Installed")
+        return "No Iris Installed"
     else
         --has iris
         local irisState = sgInterface.getIrisState()
         if (irisState == "CLOSED") then
             sgInterface.toggleIris()
+            return "Iris_closing"
         else
             --not CLOSED
-            print("Iris Not Closed")
+            return "Iris_not_closed"
         end
     end
 end
