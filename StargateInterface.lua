@@ -1,8 +1,6 @@
 
 --print("Testing")
 local c = require("component")
-local event = require("event")
-local os = require("os")
 local sg = c.stargate
 
 local sgInterface = {}
