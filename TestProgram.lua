@@ -18,3 +18,5 @@ for i = 1, 9 do
         print("Engaged")
     end
 end
+
+sgi.engageGate()
