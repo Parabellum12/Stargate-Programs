@@ -24,6 +24,10 @@ end
 
 --dialing
 function sgInterface.engageSymbol(symbolName)
+    if (sgInterface.getStatus() == "open") then
+        print("Gate already open")
+        return "gate_open"
+    end
     while (not sgInterface.isReadyForSymbol()) do
     end
     return sg.engageSymbol(symbolName)
