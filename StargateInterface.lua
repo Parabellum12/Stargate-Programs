@@ -1,11 +1,11 @@
 
-print("Testing")
+--print("Testing")
 c = require("component")
 event = require("event")
 os = require("os")
 sg = c.stargate
 
-print("Testing 1")
+--print("Testing 1")
 --status
 function getSgType()
     return sg.getGateType()
@@ -91,5 +91,5 @@ function getIrisDurability()
     return sg.getIrisDurability()
 end
 
-print("Testing 2")
-print(getSgType())
+--print("Testing 2")
+--print(getSgType())
