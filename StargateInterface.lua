@@ -6,7 +6,6 @@ os = require("os")
 sg = c.stargate
 
 print("Testing 1")
-print(getSgType())
 --status
 function getSgType()
     return sg.getGateType()
@@ -93,3 +92,4 @@ function getIrisDurability()
 end
 
 print("Testing 2")
+print(getSgType())
