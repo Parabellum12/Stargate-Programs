@@ -20,3 +20,4 @@ for i = 1, 9 do
 end
 
 sgi.engageGate()
+sgi.disengageGate()
