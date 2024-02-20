@@ -8,7 +8,6 @@ local dial = {}
 local address
 
 function dial.Dial(symbols) 
-    addressLength = #symbols
     address = symbols
     dial.DialNext(0)
 end
