@@ -15,6 +15,9 @@ for i = 1, 9 do
     local temp = address[i]
     print("Engaging "..temp)
     sgi.engageSymbol(temp)
+    while (sgi.getStatus() == "dialing") do
+        
+    end
 end
 
 sgi.engageGate()
