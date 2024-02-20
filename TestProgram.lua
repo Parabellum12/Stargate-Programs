@@ -18,5 +18,7 @@ for i = 1, 9 do
 end
 
 sgi.engageGate()
+
 os.sleep(0.1)
+
 sgi.disengageGate()
