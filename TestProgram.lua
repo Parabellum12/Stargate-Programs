@@ -6,4 +6,4 @@ if (sgi == nil) then
 end
 
 
-print("Stored Energy:"+sgi.getStoredEnergy());
+print("Stored Energy:"..sgi.getStoredEnergy());
