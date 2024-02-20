@@ -14,5 +14,7 @@ local index = 1
 
 for i = 1, 9 do
     print("Engaging "..temp[i])
-    sgi.engageSymbol(temp[i])
+    if (sgi.engageSymbol(temp[i])[1]) then
+        print("Engaged")
+    end
 end
