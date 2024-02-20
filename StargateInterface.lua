@@ -1,4 +1,3 @@
-
 --print("Testing")
 local c = require("component")
 local sg = c.stargate
@@ -25,12 +24,10 @@ end
 
 --dialing
 function sgInterface.engageSymbol(symbolName)
-    while (sgInterface.getStatus() ~= "idle") do
-        print("Waiting for gate to idle")
+    while (not sgInterface.isReadyForSymbol()) do
+        --print("Waiting for gate to idle")
     end
-    if (sgInterface.getStatus() == "idle") then
-        return sg.engageSymbol(symbolName)
-    end
+    return sg.engageSymbol(symbolName)
 end
 
 function sgInterface.isReadyForSymbol()
