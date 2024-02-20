@@ -1,3 +1,3 @@
-sgi = require("StargateInterface")
+sgi = require("StargateInterface.lua")
 
 print(sgi.getStoredEnergy());
