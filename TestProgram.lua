@@ -13,8 +13,6 @@ local temp = {"Libra", "Canis Minor", "Sextans", "Norma", "Leo Minor", "Pegasus"
 local index = 1
 
 for i = 1, 9 do
-    while (not sgi.isReadyForSymbol()) do
-    end
     print("Engaging "..temp[i])
     sgi.engageSymbol(temp[i])
 end
