@@ -27,10 +27,10 @@ end
 
 --dialing
 function sgInterface.engageSymbol(symbolName)
-    while (getStatus() ~= "idle") do
+    while (sgInterface.getStatus() ~= "idle") do
         print("Waiting for gate to idle")
     end
-    if (getStatus() == "idle") then
+    if (sgInterface.getStatus() == "idle") then
         return sg.engageSymbol(symbolName)
     end
 end
@@ -45,15 +45,15 @@ end
 
 --iris
 function sgInterface.closeIris()
-    local irisType = getIrisType()
+    local irisType = sgInterface.getIrisType()
     if (irisType == "NULL") then
         --no iris
         print("No Iris Installed")
     else
         --has iris
-        local irisState = getIrisState()
+        local irisState = sgInterface.getIrisState()
         if (irisState == "OPENED") then
-            toggleIris()
+            sgInterface.toggleIris()
         else
             print("Iris Not Open")
         end
@@ -61,15 +61,15 @@ function sgInterface.closeIris()
 end
 
 function sgInterface.openIris()
-    local irisType = getIrisType()
+    local irisType = sgInterface.getIrisType()
     if (irisType == "NULL") then
         --no iris
         print("No Iris Installed")
     else
         --has iris
-        local irisState = getIrisState()
+        local irisState = sgInterface.getIrisState()
         if (irisState == "CLOSED") then
-            toggleIris()
+            sgInterface.toggleIris()
         else
             --not CLOSED
             print("Iris Not Closed")
