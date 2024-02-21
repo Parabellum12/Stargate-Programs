@@ -22,7 +22,7 @@ function sgInterface.getStoredEnergy()
     return sg.getEnergyStored()
 end
 
-function sgInterface.getMaxStoredEnergy()
+function sgInterface.getMaximumStoredEnergy()
     return sg.getMaxEnergyStored()
 end
 
