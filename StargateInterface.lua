@@ -22,6 +22,10 @@ function sgInterface.getStoredEnergy()
     return sg.getEnergyStored()
 end
 
+function sgInterface.getCapacitors()
+    return sg.getCapacitorsInstalled()
+end
+
 --dialing
 function sgInterface.engageSymbol(symbolName)
     return sg.engageSymbol(symbolName)
