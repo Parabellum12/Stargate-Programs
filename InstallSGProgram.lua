@@ -1,4 +1,5 @@
-os.execute("wget -f 'https://raw.githubusercontent.com/Parabellum12/Stargate-Programs/main/StargateInterface.lua' /home/StargateInterface.lua")
-os.execute("wget -f 'https://raw.githubusercontent.com/Parabellum12/Stargate-Programs/main/TestProgram.lua' /home/testProgram.lua")
-os.execute("wget -f 'https://raw.githubusercontent.com/Parabellum12/Stargate-Programs/main/Dial.lua' /home/Dial.lua")
-os.execute("wget -f 'https://raw.githubusercontent.com/Parabellum12/Stargate-Programs/main/sgc.lua' /home/sgc.lua")
+local files = {"StargateInterface.lua", "testProgram.lua", "Dial.lua", "sgc.lua"}
+for index, value in ipairs(files) do
+    os.execute("wget -f 'https://raw.githubusercontent.com/Parabellum12/Stargate-Programs/main/"..value.."' /home/"..value)
+
+end
