@@ -4,6 +4,10 @@ local sgi = require("StargateInterface")
 function handleUsrIO(input)
     if (input == "diagnostic") then
         printDiagnostic()
+    elseif (input == "closeIris") then
+        sgi.closeIris()
+    elseif (input == "openIris") then
+        sgi.openIris()
     else
         print("UNRECOGNIZED COMMAND")
     end
