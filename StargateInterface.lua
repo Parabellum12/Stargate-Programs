@@ -22,6 +22,10 @@ function sgInterface.getStoredEnergy()
     return sg.getEnergyStored()
 end
 
+function sgInterface.getMaxStoredEnergy()
+    return sg.getMaxEnergyStored()
+end
+
 function sgInterface.getNumCapacitors()
     return sg.getCapacitorsInstalled()
 end
