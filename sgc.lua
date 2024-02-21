@@ -4,6 +4,8 @@ local sgi = require("StargateInterface")
 function handleUsrIO(input)
     if (input == "diagnostic") then
         printDiagnostic()
+    else
+        print("UNRECOGNIZED COMMAND")
     end
 end
 
@@ -22,7 +24,7 @@ end
 while inLoop do
     local userInput = io.read()
 
-    if (userInput == "quit") then
+    if (userInput == "quit" or userInput == "q") then
         return
     else
         handleUsrIO(userInput)
