@@ -7,10 +7,6 @@ local sgInterface = {}
 --print("Testing 1")
 --status
 
-function sgInterface.spootopia()
-    return 42
-end
-
 function sgInterface.getSgType()
     return sg.getGateType()
 end
