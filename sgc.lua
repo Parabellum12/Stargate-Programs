@@ -13,12 +13,12 @@ function handleUsrIO(input)
             print("UNRECOGNIZED COMMAND")
         end
     elseif (mode == "dial") then
-        print("DIALED GLYPHS:"..sgi.getDialedGlyphs())
         if (input == "q" or input == "quit") then
             mode = "norm"
             print("norm mode active")
         else 
             dial.Dial({input})
+            print("DIALED GLYPHS:"..sgi.getDialedGlyphs())
         end
     end
 end
