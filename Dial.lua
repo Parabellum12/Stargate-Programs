@@ -6,7 +6,6 @@ local event = require("event")
 local dial = {}
 
 local address
-local isCanceled = false
 
 function dial.Dial(symbols) 
     address = symbols
@@ -18,9 +17,29 @@ function dial.DialNext(lastDialedIndex)
     sg.engageSymbol(glyph);
 end
 
-function dial.CancelDial()
-    isCanceled = true
+function dial.isInDial()
+    if (#sg.dialedAddress > 0) then
+        return true
+    end
+    return false
 end
+
+function dial.Abort()
+    if (dial.isInDial()) then
+        dial.engageGate()
+    else
+        dial.disengageGate()
+    end
+end
+
+function dial.engageGate() 
+    sg.engageGate()
+end
+
+function dial.disengageGate() 
+    sg.disengageGate()
+end
+
 
 
 function dial.cancelEvents()
@@ -35,7 +54,6 @@ engagedEvent = event.listen("stargate_spin_chevron_engaged", function(evname, ad
     if lock or isCanceled then
         print("Engaging Wormhole")
         sg.engageGate()
-        isCanceled = false
     else
         dial.DialNext(num)
     end

@@ -16,9 +16,14 @@ function handleUsrIO(input)
         if (input == "q" or input == "quit") then
             mode = "norm"
             print("norm mode active")
+        elseif (input == "abort") then
+            dial.Abort()
+        elseif (input == "engage") then
+            dial.engageGate()
+        elseif (input == "disengage") then
+            dial.disengageGate()
         else 
             dial.Dial({input})
-            print("DIALED GLYPHS:"..sgi.getDialedGlyphs())
         end
     end
 end
@@ -37,6 +42,10 @@ function printDiagnostic()
 end
 
 while inLoop do
+    if (mode == "dial") then
+        print("DIALED GLYPHS:"..sgi.getDialedGlyphs())
+    end
+
     local userInput = io.read()
 
     if (userInput == "quit" or userInput == "q") then
