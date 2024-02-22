@@ -11,6 +11,10 @@ function sgInterface.getSgType()
     return sg.getGateType()
 end
 
+function sgInterface.getDialedGlyphs()
+    return sg.dialedAddress
+end
+
 function sgInterface.getStatus()
     return sg.getGateStatus()
 end
