@@ -15,6 +15,7 @@ function handleNormCommands(input)
         printDiagnostic()
     elseif (input == "dial") then
         mode = "dial"
+        os.execute("clear")
         print("dial mode active")
     else
         print("UNRECOGNIZED COMMAND")
@@ -24,6 +25,7 @@ end
 function handleDialCommands(input)
     if (input == "q" or input == "quit") then
         mode = "norm"
+        os.execute("clear")
         print("norm mode active")
     elseif (input == "abort") then
         dial.Abort()
