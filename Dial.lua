@@ -93,7 +93,7 @@ end
 
 function dial.getSymbolTable()
     if (sg.getGateType() == "MILKYWAY") then
-        return  milkywayGlyphs
+        return milkywayGlyphs
     elseif (sg.getGateType() == "PEGASUS") then
         return pegasusGlyphs
     end
@@ -103,16 +103,18 @@ function dial.isValidSymbol(singleSymbol)
     local glyphTable = dial.getSymbolTable()
     for index, value in ipairs(glyphTable) do
         if (singleSymbol.lowercase == value.lowercase) then
+            print("GLYPH REAL:"..value)
             return true
         end
     end
+    print("GLYPH FAKE")
     return false
 end
 
 function dial.DialNext(lastDialedIndex)
     local glyph = address[lastDialedIndex + 1]
     if (dial.isValidSymbol(glyph)) then
-    sg.engageSymbol(glyph)
+        sg.engageSymbol(glyph)
     else
         print("INVALID GLYPH")
         dial.printGlyphTable()
@@ -120,7 +122,7 @@ function dial.DialNext(lastDialedIndex)
 end
 
 function dial.printGlyphTable()
-    print("VALID GLYPHS:"..dial.getSymbolTable())
+    print("VALID GLYPHS:" .. dial.getSymbolTable())
 end
 
 function dial.isInDial()
