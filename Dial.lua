@@ -103,11 +103,11 @@ function dial.isValidSymbol(singleSymbol)
     local glyphTable = dial.getSymbolTable()
     for index, value in ipairs(glyphTable) do
         if (string.lower(singleSymbol) == string.lower(value)) then
-            print("GIVEN GLYPH:" .. singleSymbol .. " REAL GLYPH:" .. value)
+            --print("GIVEN GLYPH:" .. singleSymbol .. " REAL GLYPH:" .. value)
             return true
         end
     end
-    print(singleSymbol.." IS FAKE GLYPH")
+    --print(singleSymbol.." IS FAKE GLYPH")
     return false
 end
 
