@@ -38,6 +38,7 @@ end
 
 function handleDialReqest(glyphs)
     if (sgi.isReadyForSymbol()) then
+        os.execute("clear")
         dial.Dial({glyphs})
     else
         print("STARGATE NOT READY FOR GLYPH")
@@ -59,7 +60,6 @@ end
 
 while inLoop do
     if (mode == "dial") then
-        os.execute("clear")
         print("AVAILABLE GLYPHS:" .. dial.getGlyphTable())
         if sgi.getDialedGlyphs() ~= nil then
             print("DIALED GLYPHS:" .. sgi.getDialedGlyphs())
