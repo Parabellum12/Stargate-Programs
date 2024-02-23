@@ -128,7 +128,7 @@ end
 function dial.printGlyphTable()
     local out = ""
     for index, value in ipairs(dial.getSymbolTable()) do
-        out.concat(value..",")
+        out = out..value..", "
     end
     print("VALID GLYPHS:" .. out)
 end
