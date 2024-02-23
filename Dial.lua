@@ -125,7 +125,7 @@ function dial.DialNext(lastDialedIndex)
 end
 
 function dial.printGlyphTable()
-    print("VALID GLYPHS:" .. table.tostring(dial.getSymbolTable()))
+    print("VALID GLYPHS:" .. table.toString(dial.getSymbolTable()))
 end
 
 function dial.isInDial()
