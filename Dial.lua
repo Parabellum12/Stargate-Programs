@@ -112,6 +112,9 @@ function dial.isValidSymbol(singleSymbol)
 end
 
 function dial.DialNext(lastDialedIndex)
+    if (#address < (lastDialedIndex + 1)) then
+        return
+    end
     local glyph = address[lastDialedIndex + 1]
     if (dial.isValidSymbol(glyph)) then
         sg.engageSymbol(glyph)
