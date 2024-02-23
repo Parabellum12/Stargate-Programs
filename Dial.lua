@@ -1,6 +1,7 @@
 local c = require("component")
 local sg = c.stargate
 local event = require("event")
+local sgi = require("StargateInterface")
 
 local dial = {}
 
@@ -149,6 +150,9 @@ function dial.isInDial()
 end
 
 function dial.Abort()
+    while not sgi.isReadyForSymbol() do
+        os.sleep(0.1)
+    end
     if (dial.isInDial()) then
         dial.engageGate()
     else
