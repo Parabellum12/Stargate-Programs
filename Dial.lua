@@ -126,7 +126,11 @@ function dial.DialNext(lastDialedIndex)
 end
 
 function dial.printGlyphTable()
-    print("VALID GLYPHS:" .. table.toString(dial.getSymbolTable()))
+    local out = ""
+    for index, value in ipairs(dial.getSymbolTable()) do
+        out.concat(value..",")
+    end
+    print("VALID GLYPHS:" .. out)
 end
 
 function dial.isInDial()
@@ -150,12 +154,6 @@ end
 
 function dial.disengageGate()
     sg.disengageGate()
-end
-
-function dial.cancelEvents()
-    event.cancel(eventEngaged)
-    event.cancel(openEvent)
-    event.cancel(failEvent)
 end
 
 engagedEvent =
