@@ -102,8 +102,8 @@ end
 function dial.isValidSymbol(singleSymbol)
     local glyphTable = dial.getSymbolTable()
     for index, value in ipairs(glyphTable) do
-        if (singleSymbol.lowercase == value.lowercase) then
-            print("GLYPH REAL:"..value)
+        if (singleSymbol == value) then
+            print("GIVEN GLYPH:"..singleSymbol.." REAL GLYPH:"..value)
             return true
         end
     end
