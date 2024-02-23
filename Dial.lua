@@ -117,6 +117,7 @@ function dial.DialNext(lastDialedIndex)
     end
     local glyph = address[lastDialedIndex + 1]
     if (dial.isValidSymbol(glyph)) then
+        print("ENGAGING "..glyph)
         sg.engageSymbol(glyph)
     else
         print("INVALID GLYPH")
@@ -162,8 +163,9 @@ engagedEvent =
     "stargate_spin_chevron_engaged",
     function(evname, address, caller, num, lock, glyph)
         os.sleep(0.5)
-
-        if lock or isCanceled then
+        
+        print("CHEVRON "..num.." ENGAGED")
+        if lock then
             print("Engaging Wormhole")
             sg.engageGate()
         else
