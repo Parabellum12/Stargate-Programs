@@ -4,27 +4,43 @@ local dial = require("Dial")
 local mode = "norm"
 function handleUsrIO(input)
     if (mode == "norm") then
-        if (input == "diagnostic") then
-            printDiagnostic()
-        elseif (input == "dial") then
-            mode = "dial"
-            print("dial mode active")
-        else
-            print("UNRECOGNIZED COMMAND")
-        end
+        handleNormCommands(input)
     elseif (mode == "dial") then
-        if (input == "q" or input == "quit") then
-            mode = "norm"
-            print("norm mode active")
-        elseif (input == "abort") then
-            dial.Abort()
-        elseif (input == "engage") then
-            dial.engageGate()
-        elseif (input == "disengage") then
-            dial.disengageGate()
-        else 
-            dial.Dial({input})
-        end
+        handleDialCommands(input)
+    end
+end
+
+function handleNormCommands(input)
+    if (input == "diagnostic") then
+        printDiagnostic()
+    elseif (input == "dial") then
+        mode = "dial"
+        print("dial mode active")
+    else
+        print("UNRECOGNIZED COMMAND")
+    end
+end
+
+function handleDialCommands(input)
+    if (input == "q" or input == "quit") then
+        mode = "norm"
+        print("norm mode active")
+    elseif (input == "abort") then
+        dial.Abort()
+    elseif (input == "engage") then
+        dial.engageGate()
+    elseif (input == "disengage") then
+        dial.disengageGate()
+    else
+        handleDialReqest(input)
+    end
+end
+
+function handleDialReqest(glyphs)
+    if (sgi.isReadyForSymbol()) then
+        dial.Dial({glyphs})
+    else
+        print("STARGATE NOT READY FOR GLYPH")
     end
 end
 
@@ -43,7 +59,8 @@ end
 
 while inLoop do
     if (mode == "dial") then
-        print("DIALED GLYPHS:"..sgi.getDialedGlyphs())
+        print("AVAILABLE GLYPHS:"..dial.getGlyphTable())
+        print("DIALED GLYPHS:" .. sgi.getDialedGlyphs())
     end
 
     local userInput = io.read()

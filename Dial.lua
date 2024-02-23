@@ -133,6 +133,14 @@ function dial.printGlyphTable()
     print("VALID GLYPHS:" .. out)
 end
 
+function dial.getGlyphTable()
+    local out = ""
+    for index, value in ipairs(dial.getSymbolTable()) do
+        out = out..value..", "
+    end
+    return out
+end
+
 function dial.isInDial()
     if (#sg.dialedAddress > 0) then
         return true
