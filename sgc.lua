@@ -59,13 +59,16 @@ end
 
 while inLoop do
     if (mode == "dial") then
-        print("AVAILABLE GLYPHS:"..dial.getGlyphTable())
-        print("DIALED GLYPHS:" .. sgi.getDialedGlyphs())
+        os.execute("clear")
+        print("AVAILABLE GLYPHS:" .. dial.getGlyphTable())
+        if sgi.getDialedGlyphs() ~= nil then
+            print("DIALED GLYPHS:" .. sgi.getDialedGlyphs())
+        end
     end
 
     local userInput = io.read()
 
-    if (userInput == "quit" or userInput == "q") then
+    if mode == "norm" and (userInput == "quit" or userInput == "q") then
         return
     else
         handleUsrIO(userInput)
