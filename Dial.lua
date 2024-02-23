@@ -103,7 +103,7 @@ function dial.isValidSymbol(singleSymbol)
     local glyphTable = dial.getSymbolTable()
     for index, value in ipairs(glyphTable) do
         if (singleSymbol == value) then
-            print("GIVEN GLYPH:"..singleSymbol.." REAL GLYPH:"..value)
+            print("GIVEN GLYPH:" .. singleSymbol .. " REAL GLYPH:" .. value)
             return true
         end
     end
@@ -125,7 +125,7 @@ function dial.DialNext(lastDialedIndex)
 end
 
 function dial.printGlyphTable()
-    print("VALID GLYPHS:" .. dial.getSymbolTable())
+    print("VALID GLYPHS:" .. table.tostring(dial.getSymbolTable()))
 end
 
 function dial.isInDial()
