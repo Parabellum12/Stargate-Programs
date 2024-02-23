@@ -53,7 +53,7 @@ function printDiagnostic()
     print("GATE STATUS: " .. sgi.getStatus())
     print("DIALED ADDRESS: " .. sgi.getDialedGlyphs())
     print("STORED ENERGY:  " .. sgi.getStoredEnergy() .. " RF")
-    print("MAXIMUM ENERGY: " .. sgi.getMaximumEnergy() .. " RF") --throws nil error (function doesnt exist i think) idk why
+    print("MAXIMUM ENERGY: " .. sgi.getMaximumEnergy() .. " RF")
     print("CAPACITORS INSTALLED: " .. sgi.getNumCapacitors())
     print("IRIS TYPE: " .. sgi.getIrisType())
     print("IRIS STATUS: " .. sgi.getIrisState())
